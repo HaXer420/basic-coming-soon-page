@@ -68,7 +68,7 @@ export default function ComingSoonPage() {
           }
         }
       `}</style>
-      <div className="h-screen w-full bg-white-A700 relative overflow-hidden">
+      <div className="h-screen w-full bg-white-A700 relative overflow-hidden md:mt-20px">
       <Img
           src="images/f3.svg"
           alt="image"
