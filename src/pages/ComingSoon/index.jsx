@@ -132,7 +132,7 @@ export default function ComingSoonPage() {
               Submit your email for updates on launch
             </Text>
           </div>
-          <div className="flex justify-center mt-[191px] gap-4 logo-buttons">
+          <div className="flex justify-center mt-[191px] md:mt-[10px] gap-4 logo-buttons">
             <Button shape="circle" className="w-[40px]">
               <Img src="images/img_frame.png" />
             </Button>
