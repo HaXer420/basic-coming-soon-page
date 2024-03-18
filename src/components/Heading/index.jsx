@@ -1,7 +1,7 @@
 import React from "react";
 
 const sizes = {
-  xs: "text-[140px] font-semibold leading-[211px]",
+  xs: "text-[90px] font-semibold leading-[121px]",
 };
 
 const Heading = ({ children, className = "", size = "xs", as, ...restProps }) => {

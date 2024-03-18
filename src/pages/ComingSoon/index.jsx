@@ -11,9 +11,11 @@ export default function ComingSoonPage() {
     const validEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     if(email === ""){
       toast.error("Please enter your email");
+      return;
     } 
     else if (!validEmail.test(email)) {
       toast.error("Please enter a valid email");
+      return;
     } 
     const baseUrl = 'http://ec2-16-171-35-115.eu-north-1.compute.amazonaws.com/user/upcoming/'
     const data = {
@@ -36,8 +38,6 @@ export default function ComingSoonPage() {
     })
 
   }
-
-
   return (
     <>
       <Helmet>
@@ -53,59 +53,58 @@ export default function ComingSoonPage() {
         .spin {
           animation: spin 10s linear infinite;
         }
-        
-        @media (max-width: 768px) {
+        @media (max-width: 1350px) {
+          .logo-image {
+            width: 150px;
+          }
           .heading-container {
-            margin-top: 20px;
+            font-size: 40px;
+          }
+          .title-container {
+            font-size: 20px;
           }
           .button-container {
-            flex-direction: column;
-            gap: 10px;
+            width: 80%;
           }
           .logo-buttons {
-            flex-direction: column;
-            gap: 20px;
+            width: 100%;
+          }
+          .button-style {
+            min-width: 30px;
           }
         }
+      
+        
       `}</style>
-      <div className="h-screen w-full bg-white-A700 relative overflow-hidden md:mt-20px">
+      <div className="h-screen w-full bg-white-A700 relative overflow-hidden">
       <Img
           src="images/f3.svg"
           alt="image"
           className="justify-center h-[3000px] max-w-[3000px] left-0 bottom-0 right-0 top-0 m-auto object-cover absolute  border-0 rotate-180"
         />
-        <div className="h-[6000px] max-w-[6000px]  touch-pan-x" style={{
+        <div className="h-[6000px] max-w-[6000px]" style={{
           // backgroundColor : 'black'
         }}>
         <Img
           src="images/f3.svg"
           alt="image"
-          className="justify-center h-[3000px] max-w-[10000px] left-0 bottom-0 right-0 top-0 m-auto object-cover absolute spin border-0"
+          className="justify-center h-[3000px] max-w-[10000px] left-0 bottom-0 right-0 top-0 m-auto object-cover absolute spin"
         />
         </div>
       
-        <div className="flex flex-col items-center justify-center w-full h-full left-0 bottom-0 right-0 top-0 m-auto absolute">
-          <Img
-            src="images/img_image_131.png"
-            alt="image131_one"
-            className="w-[24%] object-cover"
-          />
-          <div className="flex flex-col self-stretch items-center mt-32 gap-[9px] heading-container">
-            <Heading as="h1" className="capitalize text-center md:text-4xl sm:text-3xl">
+        <div className="flex flex-col items-center justify-center w-full h-full absolute inset-0 mx-auto mt-12 md:mt-32">
+          <Img src="images/img_image_131.png" alt="image131_one" className="w-1/5 md:w-1/4 lg:w-1/4 object-cover logo-image" />
+          <div className="flex flex-col self-stretch items-center mt-24 gap-2">
+            <Heading as="h1" className="text-center text-lg sm:text-xl md:text-2xl lg:text-3xl heading-container">
               Coming Soon
             </Heading>
-            <Text
-              size="s"
-              as="p"
-              className="w-[85%] md:w-full capitalize text-center"
-            >
+            <Text size="s" as="p" className="w-11/12 md:w-10/12 text-center text-xl sm:text-base title-container">
               Mobile application for the delivery of your prescription and over
               the counter health and wellness products.
             </Text>
-            
           </div>
-          <div className="flex flex-col w-full mt-10 gap-2.5 mx-auto md:p-5 max-w-[685px] button-container">
-            <div className="flex md:flex-col gap-5">
+          <div className="flex flex-col w-full mt-10 gap-2.5 px-0 mx-auto max-w-md md:max-w-lg button-container">
+          <div className="flex md:flex-col gap-5">
               <Input
                 shape="round"
                 type="email"
@@ -119,7 +118,7 @@ export default function ComingSoonPage() {
                 variant="gradient"
                 shape="round"
                 color="blue_700_blue_500_01"
-                className="sm:px-5 capitalize font-semibold min-w-[163px]"
+                className="sm:px-5 capitalize font-semibold min-w-[163px] button-style"
                 style={{
                   background: "linear-gradient(to right, #136FCF 50%, #3096FF 50%)",
                 }}
@@ -128,15 +127,15 @@ export default function ComingSoonPage() {
                 Subscribe
               </Button>
             </div>
-            <Text as="p" className="capitalize text-center">
+            <Text as="p" className="capitalize text-center text-base sm:text-sm">
               Submit your email for updates on launch
             </Text>
           </div>
-          <div className="flex justify-center mt-[191px] md:mt-[10px] gap-4 logo-buttons">
-            <Button shape="circle" className="w-[40px]">
+          <div className="flex justify-center mt-2 gap-4 logo-buttons">
+            <Button shape="circle" className="w-10 h-10">
               <Img src="images/img_frame.png" />
             </Button>
-            <Button shape="circle" className="w-[40px]">
+            <Button shape="circle" className="w-10 h-10">
               <Img src="images/img_frame_40x40.png" />
             </Button>
           </div>
