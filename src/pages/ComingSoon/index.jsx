@@ -41,7 +41,7 @@ export default function ComingSoonPage() {
   return (
     <>
       <Helmet>
-        <title>coming soon</title>
+        <title>SCRIPID</title>
         <meta name="description" content="Script ID" />
       </Helmet>
       <style jsx>{`
