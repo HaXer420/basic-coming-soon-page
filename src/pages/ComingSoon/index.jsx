@@ -72,16 +72,29 @@ export default function ComingSoonPage() {
           .button-style {
             min-width: 30px;
           }
+    
         }
-      
-        
+
+        @media (min-width: 600px) {
+          .video-container {
+            display: block; 
+          }
+          .image-container {
+            display: none; 
+          }
+        }
       `}</style>
         
       <div className="h-screen w-full bg-white-A700 relative overflow-hidden">
-      <video autoPlay loop muted playsInline className="absolute z-0 w-auto min-w-full min-h-full max-w-none">
-          <source src="images/v1.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <div className="video-container">
+          <video autoPlay loop muted playsInline className="absolute z-0 w-auto min-w-full min-h-full max-w-none">
+            <source src="images/v1.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div className="image-container">
+          <img src="images/img_frame_1686554795.png" alt="mobile_image" className="absolute z-0 w-auto min-w-full min-h-full max-w-none" />
+        </div>
         <div className="flex flex-col items-center justify-center w-full h-full absolute inset-0 mx-auto mt-4">
           <Img src="images/img_image_131.png" alt="image131_one" className="w-1/5 md:w-1/4 lg:w-1/4 object-cover logo-image" />
           <div className="flex flex-col self-stretch items-center mt-24 gap-2">
@@ -94,7 +107,7 @@ export default function ComingSoonPage() {
             </Text>
           </div>
           <div className="flex flex-col w-full mt-10 gap-2.5 px-0 mx-auto max-w-md md:max-w-lg button-container">
-          <div className="flex md:flex-col gap-5">
+            <div className="flex md:flex-col gap-5">
               <Input
                 shape="round"
                 type="email"
