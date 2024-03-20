@@ -106,7 +106,7 @@ export default function ComingSoonPage() {
               the counter health and wellness products.
             </Text>
           </div>
-          <div className="flex flex-col w-full mt-10 gap-2.5 px-0 mx-auto max-w-md md:max-w-lg button-container">
+          <div className="flex flex-col mt-10 px-0 mx-auto max-w-md md:max-w-lg button-container">
             <div className="flex md:flex-col gap-5">
               <Input
                 shape="round"
@@ -144,6 +144,7 @@ export default function ComingSoonPage() {
               <Img src="images/img_frame_40x40.png" />
             </Button> */}
           </div>
+          
         </div>
       </div>
       <ToastContainer />
