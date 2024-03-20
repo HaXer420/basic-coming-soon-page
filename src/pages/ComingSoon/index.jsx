@@ -17,7 +17,7 @@ export default function ComingSoonPage() {
       toast.error("Please enter a valid email");
       return;
     } 
-    const baseUrl = 'http://ec2-16-171-35-115.eu-north-1.compute.amazonaws.com/user/upcoming/'
+    const baseUrl = 'https://app-rec1.kavanhealth.com/user/upcoming/'
     const data = {
       email: email
     }
@@ -53,7 +53,7 @@ export default function ComingSoonPage() {
         .spin {
           animation: spin 10s linear infinite;
         }
-        @media (max-width: 1350px) {
+        @media (max-width: 1380px) {
           .logo-image {
             width: 150px;
           }
@@ -76,23 +76,13 @@ export default function ComingSoonPage() {
       
         
       `}</style>
+        
       <div className="h-screen w-full bg-white-A700 relative overflow-hidden">
-      <Img
-          src="images/f3.svg"
-          alt="image"
-          className="justify-center h-[3000px] max-w-[3000px] left-0 bottom-0 right-0 top-0 m-auto object-cover absolute  border-0 rotate-180"
-        />
-        <div className="h-[6000px] max-w-[6000px]" style={{
-          // backgroundColor : 'black'
-        }}>
-        <Img
-          src="images/f3.svg"
-          alt="image"
-          className="justify-center h-[3000px] max-w-[10000px] left-0 bottom-0 right-0 top-0 m-auto object-cover absolute spin"
-        />
-        </div>
-      
-        <div className="flex flex-col items-center justify-center w-full h-full absolute inset-0 mx-auto mt-12 md:mt-32">
+      <video autoPlay loop muted playsInline className="absolute z-0 w-auto min-w-full min-h-full max-w-none">
+          <source src="images/v1.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div className="flex flex-col items-center justify-center w-full h-full absolute inset-0 mx-auto mt-4">
           <Img src="images/img_image_131.png" alt="image131_one" className="w-1/5 md:w-1/4 lg:w-1/4 object-cover logo-image" />
           <div className="flex flex-col self-stretch items-center mt-24 gap-2">
             <Heading as="h1" className="text-center text-lg sm:text-xl md:text-2xl lg:text-3xl heading-container">
@@ -132,12 +122,14 @@ export default function ComingSoonPage() {
             </Text>
           </div>
           <div className="flex justify-center mt-2 gap-4 logo-buttons">
-            <Button shape="circle" className="w-10 h-10">
-              <Img src="images/img_frame.png" />
-            </Button>
-            <Button shape="circle" className="w-10 h-10">
+            <a href="https://www.linkedin.com/company/scripid-llc/" target="_blank" rel="noopener noreferrer">
+              <Button shape="circle" className="w-10 h-10">
+                <Img src="images/img_frame.png" />
+              </Button>
+            </a>
+            {/* <Button shape="circle" className="w-10 h-10">
               <Img src="images/img_frame_40x40.png" />
-            </Button>
+            </Button> */}
           </div>
         </div>
       </div>
